@@ -46,6 +46,7 @@ const { stop } = blocked(fn, options)
 |`trimFalsePositives`|*falsy*| eliminate a class of false positives (experimental) |
 |`threshold`| *20* | minimum miliseconds of blockage to report. supported for parity with [`blocked`](https://www.npmjs.com/package/blocked)|
 |`resourcesCap`| *undefined* | maximum amount of stack traces with resource details kept in memory. Resources are not saved by default. see the next section for details |
+|`stackTraceLimit`| Infinity | maximum number of error frames to display
 |`debug`| *falsy* | print debug data to console |
 
 Returns: An object with `stop` method. `stop()` will disable the async hooks set up by this library and callback will no longer be called.

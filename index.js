@@ -21,7 +21,8 @@ module.exports = (callback, options) => {
   options = options || {}
   options.threshold = (options.threshold || 20)
   options.resourcesCap = (options.resourcesCap || 0)
-  Error.stackTraceLimit = Infinity
+  options.stackTraceLimit = (options.stackTraceLimit || Infinity)
+  Error.stackTraceLimit = options.stackTraceLimit
   const asyncHook = asyncHooks.createHook({ init, before, after, destroy })
 
   const debugLog = (title, message) => (options.debug && process._rawDebug(title, message))
